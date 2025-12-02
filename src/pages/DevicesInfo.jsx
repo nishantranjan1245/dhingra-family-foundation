@@ -25,26 +25,32 @@ export default function DevicesInfo() {
     "Confidence in daily activities"
   ];
 
+  // --------- Added `image` (public folder) for each wheelchair type ----------
   const wheelchairTypes = [
     {
       title: "Manual Wheelchairs",
-      description: "Operated by the user or a caregiver. Suitable for short distances and general mobility."
+      description: "Operated by the user or a caregiver. Suitable for short distances and general mobility.",
+      image: "/images/manual-wheelchair.jpg"
     },
     {
       title: "Electric Wheelchairs",
-      description: "Battery-powered and controlled with a joystick. Provide more independence for long distances."
+      description: "Battery-powered and controlled with a joystick. Provide more independence for long distances.",
+      image: "/images/electric-wheelchair.png"
     },
     {
       title: "Sports Wheelchairs",
-      description: "Designed for sports like basketball, racing, etc. Lightweight, durable, and fast."
+      description: "Designed for sports like basketball, racing, etc. Lightweight, durable, and fast.",
+      image: "/images/sports-wheelchair.png"
     },
     {
       title: "Folding Wheelchairs",
-      description: "Easy to carry, travel-friendly. Helpful for transportation and compact spaces."
+      description: "Easy to carry, travel-friendly. Helpful for transportation and compact spaces.",
+      image: "public/images/folding-wheelchair.png"
     },
     {
       title: "Commode Wheelchairs",
-      description: "Useful for indoor use and bathroom assistance."
+      description: "Useful for indoor use and bathroom assistance.",
+      image: "/images/commode-wheelchair.png"
     }
   ];
 
@@ -348,6 +354,16 @@ export default function DevicesInfo() {
                   transition={{ delay: index * 0.1 }}
                   whileHover={{ y: -5, scale: 1.02 }}
                 >
+                  {/* Image (from public/images) with fallback */}
+                  <div className="mb-4 overflow-hidden rounded-lg">
+                    <img
+                      src={type.image}
+                      alt={type.title}
+                      onError={(e) => { e.currentTarget.src = "/images/placeholder.jpg"; }}
+                      className="w-full h-40 object-cover"
+                    />
+                  </div>
+
                   <div className="flex items-center gap-3 mb-2">
                     <motion.div 
                       className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold group-hover:bg-blue-500 group-hover:text-white transition-colors"

@@ -145,7 +145,7 @@ export default function AboutSection() {
                 className="absolute -inset-4 bg-gradient-to-br from-red-500/10 to-orange-500/10 rounded-[2rem] transform rotate-3"
               />
               <img 
-                src="/images/image-4.jpg"
+                src="/images/image4.png"
                 alt="Community support"
                 className="rounded-3xl shadow-2xl w-full relative z-10 border-4 border-white"
               />
