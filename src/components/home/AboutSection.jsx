@@ -150,31 +150,11 @@ export default function AboutSection() {
                 className="rounded-3xl shadow-2xl w-full relative z-10 border-4 border-white"
               />
             </div>
-            
-            {/* Stats Card */}
-            <motion.div 
-              className="absolute -bottom-10 -left-10 bg-white rounded-2xl p-6 shadow-2xl border border-gray-100"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.5 }}
-              whileHover={{ scale: 1.05 }}
-            >
-              <div className="flex items-center gap-4">
-                <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-orange-500 rounded-2xl flex items-center justify-center shadow-lg">
-                  <Award className="w-8 h-8 text-white" />
-                </div>
-                <div>
-                  <p className="text-3xl font-black text-gray-900">10+ Years</p>
-                  <p className="text-gray-500 font-medium">Community Service</p>
-                </div>
-              </div>
-            </motion.div>
 
             {/* Top Badge */}
             <motion.div 
               className="absolute -top-6 -right-6 bg-gradient-to-r from-red-500 to-orange-500 text-white rounded-2xl px-6 py-3 shadow-xl"
-              animate={{ y: [0, -10, 0] }}
+              animate={{ y: [0, -20, 0] }}
               transition={{ duration: 3, repeat: Infinity }}
             >
               <div className="flex items-center gap-2">
