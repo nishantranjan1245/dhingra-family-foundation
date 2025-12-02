@@ -45,7 +45,7 @@ export default function DevicesInfo() {
     {
       title: "Folding Wheelchairs",
       description: "Easy to carry, travel-friendly. Helpful for transportation and compact spaces.",
-      image: "public/images/folding-wheelchair.png"
+      image: "/images/folding-wheelchair.png"
     },
     {
       title: "Commode Wheelchairs",
