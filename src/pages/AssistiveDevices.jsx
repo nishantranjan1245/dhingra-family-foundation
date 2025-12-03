@@ -16,8 +16,7 @@ import {
   BookOpen
 } from "lucide-react";
 
-// Wrench icon workaround
-
+// Full AssistiveDevices component (with cane images)
 export default function AssistiveDevices() {
   const benefits = [
     "Improved mobility",
@@ -30,23 +29,28 @@ export default function AssistiveDevices() {
   const wheelchairTypes = [
     {
       title: "Manual Wheelchairs",
-      description: "Operated by the user or a caregiver. Suitable for short distances and general mobility."
+      description: "Operated by the user or a caregiver. Suitable for short distances and general mobility.",
+      image: "/images/manual-wheelchair.jpg"
     },
     {
       title: "Electric Wheelchairs",
-      description: "Battery-powered and controlled with a joystick. Provide more independence for long distances."
+      description: "Battery-powered and controlled with a joystick. Provide more independence for long distances.",
+      image: "/images/electric-wheelchair.png"
     },
     {
       title: "Sports Wheelchairs",
-      description: "Designed for sports like basketball, racing, etc. Lightweight, durable, and fast."
+      description: "Designed for sports like basketball, racing, etc. Lightweight, durable, and fast.",
+      image: "/images/sports-wheelchair.png"
     },
     {
       title: "Folding Wheelchairs",
-      description: "Easy to carry, travel-friendly. Helpful for transportation and compact spaces."
+      description: "Easy to carry, travel-friendly. Helpful for transportation and compact spaces.",
+      image: "/images/folding-wheelchair.png"
     },
     {
       title: "Commode Wheelchairs",
-      description: "Useful for indoor use and bathroom assistance."
+      description: "Useful for indoor use and bathroom assistance.",
+      image: "/images/commode-wheelchair.png"
     }
   ];
 
@@ -62,22 +66,27 @@ export default function AssistiveDevices() {
     "Increased independence"
   ];
 
+  // Cane types with image property
   const caneTypes = [
     {
       title: "Single-point cane",
-      description: "Basic support for mild balance issues."
+      description: "Basic support for mild balance issues.",
+      image: "/images/single-point.png"
     },
     {
       title: "Quad cane",
-      description: "Four-point base for added stability."
+      description: "Four-point base for added stability.",
+      image: "/images/quad-cane.png"
     },
     {
       title: "Folding cane",
-      description: "Portable and easy to carry."
+      description: "Portable and easy to carry.",
+      image: "/images/folding-cane.png"
     },
     {
       title: "White cane",
-      description: "Used by persons with visual impairments for navigation."
+      description: "Used by persons with visual impairments for navigation.",
+      image: "/images/white-cane.png"
     }
   ];
 
@@ -105,15 +114,18 @@ export default function AssistiveDevices() {
   const walkersInfo = [
     {
       title: "Walkers",
-      description: "For individuals who need full body support. Offers stability for indoor & outdoor use."
+      description: "For individuals who need full body support. Offers stability for indoor & outdoor use.",
+      image: "/images/walkers.png"
     },
     {
       title: "Crutches",
-      description: "Used for temporary or semi-permanent support after injury or surgery."
+      description: "Used for temporary or semi-permanent support after injury or surgery.",
+      image: "/images/crutches.png"
     },
     {
       title: "Rollators (Wheeled Walkers)",
-      description: "Comes with wheels and a seat. Helps in walking long distances with rest support."
+      description: "Comes with wheels and a seat. Helps in walking long distances with rest support.",
+      image: "/images/rollators.png"
     }
   ];
 
@@ -146,7 +158,6 @@ export default function AssistiveDevices() {
     <div>
       {/* Hero Section */}
       <section className="relative min-h-[70vh] flex items-center overflow-hidden">
-        {/* Background Image with Overlay */}
         <div className="absolute inset-0">
           <img 
             src="/images/image-7.jpg"
@@ -154,17 +165,15 @@ export default function AssistiveDevices() {
             className="w-full h-full object-cover"
           />
           <div
-  className="absolute inset-0 bg-gradient-to-r 
-             from-[#4A1F25]/95 
-             via-[#562628]/90 
-             via-[#5C2B2E]/85 
-             via-[#B55A29]/80 
-             to-[#3C1D29]/75"
-/>
-
+            className="absolute inset-0 bg-gradient-to-r 
+              from-[#4A1F25]/95 
+              via-[#562628]/90 
+              via-[#5C2B2E]/85 
+              via-[#B55A29]/80 
+              to-[#3C1D29]/75"
+          />
         </div>
         
-        {/* Floating Gear Animations */}
         <motion.div 
           className="absolute top-20 right-32"
           animate={{ rotate: 360 }}
@@ -218,7 +227,6 @@ export default function AssistiveDevices() {
           </div>
         </div>
 
-        {/* Bottom Wave */}
         <div className="absolute bottom-0 left-0 right-0">
           <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="white"/>
@@ -270,7 +278,7 @@ export default function AssistiveDevices() {
         </div>
       </section>
 
-      {/* Section 2: Wheelchairs */}
+      {/* Section 2: Wheelchairs (with images) */}
       <section className="py-20 bg-slate-50">
         <div className="container mx-auto px-6 lg:px-12">
           <motion.div
@@ -292,9 +300,24 @@ export default function AssistiveDevices() {
             <h3 className="text-xl font-semibold text-slate-900 mb-6">Types of Wheelchairs:</h3>
             <div className="grid md:grid-cols-2 gap-6">
               {wheelchairTypes.map((type, index) => (
-                <div key={index} className="bg-white rounded-2xl p-6 shadow-md border border-slate-100">
-                  <h4 className="font-semibold text-slate-900 mb-2">{index + 1}. {type.title}</h4>
-                  <p className="text-slate-600 text-sm">{type.description}</p>
+                <div key={index} className="bg-white rounded-2xl p-0 shadow-md border border-slate-100 overflow-hidden">
+                  {type.image && (
+                    <div className="w-full h-40 md:h-44 overflow-hidden">
+                      <img
+                        src={type.image}
+                        alt={type.title}
+                        className="w-full h-full object-cover"
+                        onError={(e) => { e.currentTarget.src = '/images/wheelchairs/placeholder.jpg'; }}
+                      />
+                    </div>
+                  )}
+
+                  <div className="p-6">
+                    <h4 className="font-semibold text-slate-900 mb-2 flex items-center gap-2">
+                      <span className="text-slate-400 font-medium">{index + 1}.</span> {type.title}
+                    </h4>
+                    <p className="text-slate-600 text-sm">{type.description}</p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -355,7 +378,7 @@ export default function AssistiveDevices() {
         </div>
       </section>
 
-      {/* Section 4: Mobility Sticks & Canes */}
+      {/* Section 4: Mobility Sticks & Canes (with images) */}
       <section className="py-20 bg-slate-50">
         <div className="container mx-auto px-6 lg:px-12">
           <motion.div
@@ -374,11 +397,28 @@ export default function AssistiveDevices() {
               These devices help with balance and support while walking.
             </p>
             
+            {/* Cane cards with images */}
             <div className="grid md:grid-cols-2 gap-6 mb-8">
               {caneTypes.map((type, index) => (
-                <div key={index} className="bg-white rounded-2xl p-6 shadow-md border border-slate-100">
-                  <h4 className="font-semibold text-slate-900 mb-2">{type.title}</h4>
-                  <p className="text-slate-600 text-sm">{type.description}</p>
+                <div 
+                  key={index} 
+                  className="bg-white rounded-2xl shadow-md border border-slate-100 overflow-hidden"
+                >
+                  {type.image && (
+                    <div className="w-full h-36 overflow-hidden">
+                      <img
+                        src={type.image}
+                        alt={type.title}
+                        className="w-full h-full object-cover"
+                        onError={(e) => { e.currentTarget.src = "/images/canes/placeholder.png"; }}
+                      />
+                    </div>
+                  )}
+
+                  <div className="p-6">
+                    <h4 className="font-semibold text-slate-900 mb-2">{type.title}</h4>
+                    <p className="text-slate-600 text-sm">{type.description}</p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -449,7 +489,7 @@ export default function AssistiveDevices() {
         </div>
       </section>
 
-      {/* Section 6: Walkers, Crutches & Rollators */}
+      {/* Section 6: Walkers, Crutches & Rollators (with images) */}
       <section className="py-20 bg-slate-50">
         <div className="container mx-auto px-6 lg:px-12">
           <motion.div
@@ -467,9 +507,22 @@ export default function AssistiveDevices() {
             
             <div className="grid md:grid-cols-3 gap-6">
               {walkersInfo.map((item, index) => (
-                <div key={index} className="bg-white rounded-2xl p-6 shadow-md border border-slate-100">
-                  <h4 className="font-semibold text-slate-900 mb-3 text-lg">{index + 1}. {item.title}</h4>
-                  <p className="text-slate-600">{item.description}</p>
+                <div key={index} className="bg-white rounded-2xl p-0 shadow-md border border-slate-100 overflow-hidden">
+                  {item.image && (
+                    <div className="w-full h-36 overflow-hidden">
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="w-full h-full object-cover"
+                        onError={(e) => { e.currentTarget.src = '/images/walkers/placeholder.jpg'; }}
+                      />
+                    </div>
+                  )}
+
+                  <div className="p-6">
+                    <h4 className="font-semibold text-slate-900 mb-3 text-lg">{index + 1}. {item.title}</h4>
+                    <p className="text-slate-600">{item.description}</p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -596,49 +649,47 @@ export default function AssistiveDevices() {
 
       {/* Section 10: Need Guidance? */}
       <section className="py-20 bg-gradient-to-br from-red-700 to-orange-700 relative overflow-hidden">
-              {/* Animated Shapes */}
-              <motion.div 
-                className="absolute top-10 left-10 w-32 h-32 border-2 border-white/10 rounded-full"
-                animate={{ rotate: 360, scale: [1, 1.1, 1] }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              />
-              <motion.div 
-                className="absolute bottom-10 right-10 w-24 h-24 border-2 border-white/15 rounded-2xl"
-                animate={{ rotate: -360 }}
-                transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-              />
-              <motion.div 
-                className="absolute top-1/2 left-1/4 w-40 h-40 bg-white/5 rounded-full blur-3xl"
-                animate={{ scale: [1, 1.5, 1], opacity: [0.1, 0.2, 0.1] }}
-                transition={{ duration: 8, repeat: Infinity }}
-              />
-      
-              {/* Floating Particles */}
-              {[...Array(6)].map((_, i) => (
-                <motion.div
-                  key={i}
-                  className="absolute w-2 h-2 bg-white/20 rounded-full"
-                  style={{ left: `${15 + i * 15}%`, top: `${20 + (i % 3) * 25}%` }}
-                  animate={{ y: [0, -20, 0], opacity: [0.2, 0.6, 0.2] }}
-                  transition={{ duration: 3 + i * 0.5, repeat: Infinity, delay: i * 0.3 }}
-                />
-              ))}
-      
-              <div className="container mx-auto px-6 lg:px-12 relative">
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  className="max-w-3xl mx-auto text-center text-white"
-                >
-                  <motion.div 
-                    className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-6 border border-white/30"
-                    whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
-                    animate={{ y: [0, -5, 0] }}
-                    transition={{ duration: 3, repeat: Infinity }}
-                  >
-                    <MessageCircle className="w-10 h-10" />
-                  </motion.div>
+        <motion.div 
+          className="absolute top-10 left-10 w-32 h-32 border-2 border-white/10 rounded-full"
+          animate={{ rotate: 360, scale: [1, 1.1, 1] }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+        />
+        <motion.div 
+          className="absolute bottom-10 right-10 w-24 h-24 border-2 border-white/15 rounded-2xl"
+          animate={{ rotate: -360 }}
+          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+        />
+        <motion.div 
+          className="absolute top-1/2 left-1/4 w-40 h-40 bg-white/5 rounded-full blur-3xl"
+          animate={{ scale: [1, 1.5, 1], opacity: [0.1, 0.2, 0.1] }}
+          transition={{ duration: 8, repeat: Infinity }}
+        />
+
+        {[...Array(6)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-2 h-2 bg-white/20 rounded-full"
+            style={{ left: `${15 + i * 15}%`, top: `${20 + (i % 3) * 25}%` }}
+            animate={{ y: [0, -20, 0], opacity: [0.2, 0.6, 0.2] }}
+            transition={{ duration: 3 + i * 0.5, repeat: Infinity, delay: i * 0.3 }}
+          />
+        ))}
+
+        <div className="container mx-auto px-6 lg:px-12 relative">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-3xl mx-auto text-center text-white"
+          >
+            <motion.div 
+              className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-6 border border-white/30"
+              whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
+              animate={{ y: [0, -5, 0] }}
+              transition={{ duration: 3, repeat: Infinity }}
+            >
+              <MessageCircle className="w-10 h-10" />
+            </motion.div>
             <h2 className="text-3xl font-bold mb-4">Need Guidance?</h2>
             <p className="text-purple-100 mb-8">
               Have questions about assistive devices or want to understand their uses? We're here to support with information and awareness.
