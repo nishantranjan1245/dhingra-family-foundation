@@ -58,7 +58,7 @@ export default function DevicesInfo() {
     }
   ];
 
-  // --------- UPDATED: prostheticTypes now includes image for each item ----------
+  // --------- Prosthetic types already with images ----------
   const prostheticTypes = [
     {
       title: "Lower-limb prosthetics (leg, foot)",
@@ -86,22 +86,27 @@ export default function DevicesInfo() {
     "Increased independence"
   ];
 
+  // --------- Cane types with images ----------
   const caneTypes = [
     {
       title: "Single-point cane",
-      description: "Basic support for mild balance issues."
+      description: "Basic support for mild balance issues.",
+      image: "/images/single-point.png"
     },
     {
       title: "Quad cane",
-      description: "Four-point base for added stability."
+      description: "Four-point base for added stability.",
+      image: "/images/quad-cane.png"
     },
     {
       title: "Folding cane",
-      description: "Portable and easy to carry."
+      description: "Portable and easy to carry.",
+      image: "/images/folding-cane.png"
     },
     {
       title: "White cane",
-      description: "Used by persons with visual impairments for navigation."
+      description: "Used by persons with visual impairments for navigation.",
+      image: "/images/white-cane.png"
     }
   ];
 
@@ -111,12 +116,33 @@ export default function DevicesInfo() {
     "Support during daily walking"
   ];
 
+  // --------- Braces with images (converted from simple strings to objects) ----------
   const braceTypes = [
-    "Knee braces",
-    "Ankle supports",
-    "Back braces",
-    "Wrist & hand supports",
-    "AFO (Ankle-Foot Orthosis)"
+    {
+      title: "Knee braces",
+      image: "/images/knee-braces.png",
+      description: "Support and stability for the knee joint."
+    },
+    {
+      title: "Ankle supports",
+      image: "/images/ankle-support.png",
+      description: "Stabilizes the ankle to prevent sprains."
+    },
+    {
+      title: "Back braces",
+      image: "/images/back-braces.png",
+      description: "Helps posture and reduces lower back strain."
+    },
+    {
+      title: "Wrist & hand supports",
+      image: "/images/wrist-hand.png",
+      description: "Assists wrist stability and healing."
+    },
+    {
+      title: "AFO (Ankle-Foot Orthosis)",
+      image: "/images/ankle-foot.png",
+      description: "Supports foot positioning and gait."
+    }
   ];
 
   const braceUses = [
@@ -126,21 +152,25 @@ export default function DevicesInfo() {
     "Improved confidence while walking"
   ];
 
+  // --------- Walkers, Crutches & Rollators with images ----------
   const walkersInfo = [
     {
       title: "Walkers",
       description:
-        "For individuals who need full body support. Offers stability for indoor & outdoor use."
+        "For individuals who need full body support. Offers stability for indoor & outdoor use.",
+      image: "/images/walkers.png"
     },
     {
       title: "Crutches",
       description:
-        "Used for temporary or semi-permanent support after injury or surgery."
+        "Used for temporary or semi-permanent support after injury or surgery.",
+      image: "/images/crutches.png"
     },
     {
       title: "Rollators (Wheeled Walkers)",
       description:
-        "Comes with wheels and a seat. Helps in walking long distances with rest support."
+        "Comes with wheels and a seat. Helps in walking long distances with rest support.",
+      image: "/images/rollators.png"
     }
   ];
 
@@ -168,6 +198,9 @@ export default function DevicesInfo() {
     "Assistive devices categories",
     "Community support for accessibility"
   ];
+
+  // Helper: flexible image size classes for cards (user can change w/h classes here)
+  const cardImgSizeClass = "w-28 h-20"; // change to increase/decrease image size (tailwind classes)
 
   return (
     <div>
@@ -206,11 +239,7 @@ export default function DevicesInfo() {
 
         <div className="container mx-auto px-6 lg:px-12 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
+            <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
               <motion.div
                 className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-red-500/20 to-orange-500/20 backdrop-blur-sm text-white rounded-full text-sm font-semibold mb-6 border border-white/20"
                 whileHover={{ scale: 1.05 }}
@@ -225,8 +254,7 @@ export default function DevicesInfo() {
                 </span>
               </h1>
               <p className="text-lg text-slate-300 leading-relaxed mb-8">
-                Clear, educational information about different types of assistive devices that support mobility,
-                independence, and daily living.
+                Clear, educational information about different types of assistive devices that support mobility, independence, and daily living.
               </p>
               <div className="grid grid-cols-3 gap-4">
                 {[
@@ -246,12 +274,7 @@ export default function DevicesInfo() {
               </div>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="hidden lg:block relative"
-            >
+            <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.2 }} className="hidden lg:block relative">
               <img src="/images/image-7.jpg" alt="Assistive Devices" className="rounded-3xl shadow-2xl" />
               <div className="absolute -bottom-4 -right-4 bg-gradient-to-r from-red-500 to-orange-500 rounded-2xl p-5 shadow-xl">
                 <p className="text-white font-bold text-lg">7+</p>
@@ -264,53 +287,30 @@ export default function DevicesInfo() {
         {/* Bottom Wave */}
         <div className="absolute bottom-0 left-0 right-0">
           <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z"
-              fill="white"
-            />
+            <path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="white"/>
           </svg>
         </div>
       </section>
 
       {/* Section 1: What Are Assistive Devices? */}
       <section className="py-20 bg-white relative overflow-hidden">
-        <motion.div
-          className="absolute top-10 right-0 w-72 h-72 bg-gradient-to-br from-teal-100/50 to-blue-100/50 rounded-full blur-3xl"
-          animate={{ scale: [1, 1.2, 1], x: [0, 30, 0] }}
-          transition={{ duration: 12, repeat: Infinity }}
-        />
+        <motion.div className="absolute top-10 right-0 w-72 h-72 bg-gradient-to-br from-teal-100/50 to-blue-100/50 rounded-full blur-3xl" animate={{ scale: [1, 1.2, 1], x: [0, 30, 0] }} transition={{ duration: 12, repeat: Infinity }} />
 
         <div className="container mx-auto px-6 lg:px-12 relative">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-              <motion.div
-                className="w-16 h-16 bg-teal-100 rounded-2xl flex items-center justify-center mb-6 shadow-lg"
-                whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
-              >
+              <motion.div className="w-16 h-16 bg-teal-100 rounded-2xl flex items-center justify-center mb-6 shadow-lg" whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}>
                 <PersonStanding className="w-8 h-8 text-teal-600" />
               </motion.div>
               <h2 className="text-3xl font-bold text-slate-900 mb-4">What Are Assistive Devices?</h2>
               <p className="text-slate-600 mb-6 leading-relaxed">
-                Assistive devices are tools that help people move, communicate, or perform activities independently. They
-                make homes, workplaces, and public spaces more accessible and safe.
+                Assistive devices are tools that help people move, communicate, or perform activities independently. They make homes, workplaces, and public spaces more accessible and safe.
               </p>
               <p className="text-slate-700 font-medium mb-4">Common benefits:</p>
               <div className="space-y-3">
                 {benefits.map((benefit, index) => (
-                  <motion.div
-                    key={index}
-                    className="flex items-center gap-3 p-2 rounded-lg hover:bg-teal-50 transition-colors"
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                    whileHover={{ x: 5 }}
-                  >
-                    <motion.div
-                      className="w-7 h-7 bg-teal-100 rounded-full flex items-center justify-center flex-shrink-0"
-                      whileHover={{ scale: 1.2, rotate: 360 }}
-                      transition={{ duration: 0.3 }}
-                    >
+                  <motion.div key={index} className="flex items-center gap-3 p-2 rounded-lg hover:bg-teal-50 transition-colors" initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1 }} whileHover={{ x: 5 }}>
+                    <motion.div className="w-7 h-7 bg-teal-100 rounded-full flex items-center justify-center flex-shrink-0" whileHover={{ scale: 1.2, rotate: 360 }} transition={{ duration: 0.3 }}>
                       <Check className="w-4 h-4 text-teal-600" />
                     </motion.div>
                     <span className="text-slate-700">{benefit}</span>
@@ -320,11 +320,7 @@ export default function DevicesInfo() {
             </motion.div>
 
             <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="relative">
-              <motion.div
-                className="absolute -inset-4 bg-gradient-to-br from-teal-200/30 to-blue-200/30 rounded-3xl"
-                animate={{ rotate: [0, 2, 0, -2, 0] }}
-                transition={{ duration: 8, repeat: Infinity }}
-              />
+              <motion.div className="absolute -inset-4 bg-gradient-to-br from-teal-200/30 to-blue-200/30 rounded-3xl" animate={{ rotate: [0, 2, 0, -2, 0] }} transition={{ duration: 8, repeat: Infinity }} />
               <img src="/images/image-7.jpg" alt="Assistive devices" className="rounded-3xl shadow-2xl w-full relative z-10" />
             </motion.div>
           </div>
@@ -333,11 +329,7 @@ export default function DevicesInfo() {
 
       {/* Section 2: Wheelchairs */}
       <section className="py-20 bg-slate-50 relative overflow-hidden">
-        <motion.div
-          className="absolute bottom-20 right-10 w-24 h-24 border-2 border-blue-200 rounded-full opacity-50"
-          animate={{ scale: [1, 1.2, 1], rotate: [0, 180, 360] }}
-          transition={{ duration: 15, repeat: Infinity }}
-        />
+        <motion.div className="absolute bottom-20 right-10 w-24 h-24 border-2 border-blue-200 rounded-full opacity-50" animate={{ scale: [1, 1.2, 1], rotate: [0, 180, 360] }} transition={{ duration: 15, repeat: Infinity }} />
 
         <div className="container mx-auto px-6 lg:px-12 relative">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-4xl mx-auto">
@@ -348,39 +340,20 @@ export default function DevicesInfo() {
               <h2 className="text-3xl font-bold text-slate-900">Wheelchairs</h2>
             </div>
             <p className="text-slate-600 mb-8">
-              Wheelchairs are one of the most widely used mobility tools. They assist individuals who face difficulty walking
-              or cannot walk independently.
+              Wheelchairs are one of the most widely used mobility tools. They assist individuals who face difficulty walking or cannot walk independently.
             </p>
 
             <h3 className="text-xl font-semibold text-slate-900 mb-6">Types of Wheelchairs:</h3>
             <div className="grid md:grid-cols-2 gap-6">
               {wheelchairTypes.map((type, index) => (
-                <motion.div
-                  key={index}
-                  className="bg-white rounded-2xl p-6 shadow-md border border-slate-100 hover:shadow-xl hover:border-blue-200 transition-all duration-300 group"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  whileHover={{ y: -5, scale: 1.02 }}
-                >
+                <motion.div key={index} className="bg-white rounded-2xl p-6 shadow-md border border-slate-100 hover:shadow-xl hover:border-blue-200 transition-all duration-300 group" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1 }} whileHover={{ y: -5, scale: 1.02 }}>
                   {/* Image (from public/images) with fallback */}
                   <div className="mb-4 overflow-hidden rounded-lg">
-                    <img
-                      src={type.image}
-                      alt={type.title}
-                      onError={(e) => {
-                        e.currentTarget.src = "/images/placeholder.jpg";
-                      }}
-                      className="w-full h-40 object-cover"
-                    />
+                    <img src={type.image} alt={type.title} onError={(e) => { e.currentTarget.src = "/images/placeholder.jpg"; }} className="w-full h-40 object-cover" />
                   </div>
 
                   <div className="flex items-center gap-3 mb-2">
-                    <motion.div
-                      className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold group-hover:bg-blue-500 group-hover:text-white transition-colors"
-                      whileHover={{ scale: 1.2 }}
-                    >
+                    <motion.div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold group-hover:bg-blue-500 group-hover:text-white transition-colors" whileHover={{ scale: 1.2 }}>
                       {index + 1}
                     </motion.div>
                     <h4 className="font-semibold text-slate-900">{type.title}</h4>
@@ -395,26 +368,13 @@ export default function DevicesInfo() {
 
       {/* Section 3: Artificial Limbs (Prosthetics) */}
       <section className="py-20 bg-white relative overflow-hidden">
-        <motion.div
-          className="absolute top-20 left-0 w-80 h-80 bg-gradient-to-br from-purple-100/50 to-pink-100/50 rounded-full blur-3xl"
-          animate={{ scale: [1, 1.2, 1], x: [0, 40, 0] }}
-          transition={{ duration: 15, repeat: Infinity }}
-        />
-        <motion.div
-          className="absolute bottom-20 right-0 w-72 h-72 bg-gradient-to-br from-green-100/40 to-teal-100/40 rounded-full blur-3xl"
-          animate={{ y: [0, -30, 0], scale: [1.1, 1, 1.1] }}
-          transition={{ duration: 12, repeat: Infinity }}
-        />
+        <motion.div className="absolute top-20 left-0 w-80 h-80 bg-gradient-to-br from-purple-100/50 to-pink-100/50 rounded-full blur-3xl" animate={{ scale: [1, 1.2, 1], x: [0, 40, 0] }} transition={{ duration: 15, repeat: Infinity }} />
+        <motion.div className="absolute bottom-20 right-0 w-72 h-72 bg-gradient-to-br from-green-100/40 to-teal-100/40 rounded-full blur-3xl" animate={{ y: [0, -30, 0], scale: [1.1, 1, 1.1] }} transition={{ duration: 12, repeat: Infinity }} />
 
         <div className="container mx-auto px-6 lg:px-12 relative">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-4xl mx-auto">
             <div className="flex items-center gap-4 mb-6">
-              <motion.div
-                className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center shadow-lg"
-                whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
-                animate={{ y: [0, -5, 0] }}
-                transition={{ duration: 3, repeat: Infinity }}
-              >
+              <motion.div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center shadow-lg" whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }} animate={{ y: [0, -5, 0] }} transition={{ duration: 3, repeat: Infinity }}>
                 <PersonStanding className="w-8 h-8 text-purple-600" />
               </motion.div>
               <h2 className="text-3xl font-bold text-slate-900">Artificial Limbs (Prosthetics)</h2>
@@ -423,39 +383,17 @@ export default function DevicesInfo() {
 
             <div className="grid md:grid-cols-2 gap-8">
               {/* LEFT: Types list with images */}
-              <motion.div
-                className="bg-purple-50 rounded-2xl p-6 border border-purple-100 hover:shadow-xl hover:border-purple-200 transition-all duration-300 group relative overflow-hidden"
-                whileHover={{ y: -5, scale: 1.02 }}
-              >
+              <motion.div className="bg-purple-50 rounded-2xl p-6 border border-purple-100 hover:shadow-xl hover:border-purple-200 transition-all duration-300 group relative overflow-hidden" whileHover={{ y: -5, scale: 1.02 }}>
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 overflow-hidden">
-                  <motion.div
-                    className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent"
-                    animate={{ x: ["-100%", "200%"] }}
-                    transition={{ duration: 2, repeat: Infinity, repeatDelay: 2 }}
-                  />
+                  <motion.div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent" animate={{ x: ["-100%", "200%"] }} transition={{ duration: 2, repeat: Infinity, repeatDelay: 2 }} />
                 </div>
 
                 <h3 className="text-lg font-semibold text-slate-900 mb-4 relative z-10">Types:</h3>
 
                 <ul className="space-y-3 relative z-10">
                   {prostheticTypes.map((item, index) => (
-                    <motion.li
-                      key={index}
-                      className="flex items-center gap-4 p-2 rounded-lg hover:bg-purple-100 transition-all cursor-pointer"
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: index * 0.1 }}
-                      whileHover={{ x: 5 }}
-                    >
-                      <img
-                        src={item.image}
-                        alt={item.title}
-                        onError={(e) => {
-                          e.currentTarget.src = "/images/placeholder.jpg";
-                        }}
-                        className="w-14 h-14 object-cover rounded-md border"
-                      />
+                    <motion.li key={index} className="flex items-center gap-4 p-2 rounded-lg hover:bg-purple-100 transition-all cursor-pointer" initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1 }} whileHover={{ x: 5 }}>
+                      <img src={item.image} alt={item.title} onError={(e) => { e.currentTarget.src = "/images/placeholder.jpg"; }} className="w-14 h-14 object-cover rounded-md border" />
                       <div>
                         <div className="font-medium text-slate-800">{item.title}</div>
                         {item.description && <div className="text-sm text-slate-600">{item.description}</div>}
@@ -466,34 +404,15 @@ export default function DevicesInfo() {
               </motion.div>
 
               {/* RIGHT: Benefits */}
-              <motion.div
-                className="bg-green-50 rounded-2xl p-6 border border-green-100 hover:shadow-xl hover:border-green-200 transition-all duration-300 group relative overflow-hidden"
-                whileHover={{ y: -5, scale: 1.02 }}
-              >
+              <motion.div className="bg-green-50 rounded-2xl p-6 border border-green-100 hover:shadow-xl hover:border-green-200 transition-all duration-300 group relative overflow-hidden" whileHover={{ y: -5, scale: 1.02 }}>
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 overflow-hidden">
-                  <motion.div
-                    className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent"
-                    animate={{ x: ["-100%", "200%"] }}
-                    transition={{ duration: 2, repeat: Infinity, repeatDelay: 2 }}
-                  />
+                  <motion.div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent" animate={{ x: ["-100%", "200%"] }} transition={{ duration: 2, repeat: Infinity, repeatDelay: 2 }} />
                 </div>
                 <h3 className="text-lg font-semibold text-slate-900 mb-4 relative z-10">Benefits:</h3>
                 <div className="space-y-3 relative z-10">
                   {prostheticBenefits.map((benefit, index) => (
-                    <motion.div
-                      key={index}
-                      className="flex items-center gap-3"
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: index * 0.1 }}
-                      whileHover={{ x: 5 }}
-                    >
-                      <motion.div
-                        className="w-7 h-7 bg-green-200 rounded-full flex items-center justify-center flex-shrink-0"
-                        whileHover={{ scale: 1.2, rotate: 360 }}
-                        transition={{ duration: 0.3 }}
-                      >
+                    <motion.div key={index} className="flex items-center gap-3" initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1 }} whileHover={{ x: 5 }}>
+                      <motion.div className="w-7 h-7 bg-green-200 rounded-full flex items-center justify-center flex-shrink-0" whileHover={{ scale: 1.2, rotate: 360 }} transition={{ duration: 0.3 }}>
                         <Check className="w-4 h-4 text-green-700" />
                       </motion.div>
                       <span className="text-slate-700">{benefit}</span>
@@ -503,13 +422,7 @@ export default function DevicesInfo() {
               </motion.div>
             </div>
 
-            <motion.p
-              className="text-slate-500 text-sm italic mt-6 text-center"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.5 }}
-            >
+            <motion.p className="text-slate-500 text-sm italic mt-6 text-center" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.5 }}>
               (Note: We provide only informational resources — not medical advice or product sales.)
             </motion.p>
           </motion.div>
@@ -518,16 +431,8 @@ export default function DevicesInfo() {
 
       {/* Section 4: Mobility Sticks & Canes */}
       <section className="py-20 bg-slate-50 relative overflow-hidden">
-        <motion.div
-          className="absolute top-10 right-10 w-20 h-20 border-2 border-amber-200 rounded-full"
-          animate={{ scale: [1, 1.2, 1], rotate: [0, 180, 360] }}
-          transition={{ duration: 15, repeat: Infinity }}
-        />
-        <motion.div
-          className="absolute bottom-20 left-10 w-16 h-16 bg-amber-100 rounded-2xl opacity-50"
-          animate={{ rotate: [0, 45, 0], y: [0, -20, 0] }}
-          transition={{ duration: 8, repeat: Infinity }}
-        />
+        <motion.div className="absolute top-10 right-10 w-20 h-20 border-2 border-amber-200 rounded-full" animate={{ scale: [1, 1.2, 1], rotate: [0, 180, 360] }} transition={{ duration: 15, repeat: Infinity }} />
+        <motion.div className="absolute bottom-20 left-10 w-16 h-16 bg-amber-100 rounded-2xl opacity-50" animate={{ rotate: [0, 45, 0], y: [0, -20, 0] }} transition={{ duration: 8, repeat: Infinity }} />
 
         <div className="container mx-auto px-6 lg:px-12 relative">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-4xl mx-auto">
@@ -541,24 +446,13 @@ export default function DevicesInfo() {
 
             <div className="grid md:grid-cols-2 gap-6 mb-8">
               {caneTypes.map((type, index) => (
-                <motion.div
-                  key={index}
-                  className="bg-white rounded-2xl p-6 shadow-md border border-slate-100 hover:shadow-xl hover:border-amber-200 transition-all duration-300 group cursor-pointer relative overflow-hidden"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  whileHover={{ y: -5, scale: 1.02 }}
-                >
-                  {/* Shimmer Effect */}
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 overflow-hidden">
-                    <motion.div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-amber-100/50 to-transparent" animate={{ x: ["-100%", "200%"] }} transition={{ duration: 1.5, repeat: Infinity, repeatDelay: 2 }} />
+                <motion.div key={index} className="bg-white rounded-2xl p-6 shadow-md border border-slate-100 hover:shadow-xl hover:border-amber-200 transition-all duration-300 group cursor-pointer relative overflow-hidden flex items-start gap-4" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1 }} whileHover={{ y: -5, scale: 1.02 }}>
+                  {/* Image added at left */}
+                  <img src={type.image} alt={type.title} onError={(e) => { e.currentTarget.src = "/images/placeholder.jpg"; }} className="w-20 h-20 object-cover rounded-md flex-shrink-0" />
+                  <div className="flex-1">
+                    <h4 className="font-semibold text-slate-900 mb-2">{type.title}</h4>
+                    <p className="text-slate-600 text-sm">{type.description}</p>
                   </div>
-                  <motion.div className="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center mb-3 group-hover:bg-amber-500 transition-colors" whileHover={{ scale: 1.1, rotate: 360 }} transition={{ duration: 0.5 }}>
-                    <span className="text-amber-600 font-bold group-hover:text-white transition-colors">{index + 1}</span>
-                  </motion.div>
-                  <h4 className="font-semibold text-slate-900 mb-2 relative z-10">{type.title}</h4>
-                  <p className="text-slate-600 text-sm relative z-10">{type.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -567,15 +461,7 @@ export default function DevicesInfo() {
               <h3 className="text-lg font-semibold text-slate-900 mb-4">Benefits:</h3>
               <div className="flex flex-wrap gap-4">
                 {caneBenefits.map((benefit, index) => (
-                  <motion.div
-                    key={index}
-                    className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm hover:shadow-md transition-all duration-300"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                    whileHover={{ scale: 1.05 }}
-                  >
+                  <motion.div key={index} className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm hover:shadow-md transition-all duration-300" initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: index * 0.1 }} whileHover={{ scale: 1.05 }}>
                     <motion.div className="w-6 h-6 bg-amber-200 rounded-full flex items-center justify-center flex-shrink-0" whileHover={{ rotate: 360 }} transition={{ duration: 0.5 }}>
                       <Check className="w-4 h-4 text-amber-700" />
                     </motion.div>
@@ -611,8 +497,11 @@ export default function DevicesInfo() {
                 <ul className="space-y-3 relative z-10">
                   {braceTypes.map((type, index) => (
                     <motion.li key={index} className="flex items-center gap-3" initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1 }} whileHover={{ x: 5 }}>
-                      <motion.div className="w-3 h-3 bg-teal-500 rounded-full" animate={{ scale: [1, 1.3, 1] }} transition={{ duration: 2, repeat: Infinity, delay: index * 0.15 }} />
-                      <span className="text-slate-700">{type}</span>
+                      <img src={type.image} alt={type.title} onError={(e) => { e.currentTarget.src = "/images/placeholder.jpg"; }} className="w-12 h-12 object-cover rounded-md border" />
+                      <div>
+                        <div className="text-slate-800 font-medium">{type.title}</div>
+                        {type.description && <div className="text-sm text-slate-600">{type.description}</div>}
+                      </div>
                     </motion.li>
                   ))}
                 </ul>
@@ -659,11 +548,14 @@ export default function DevicesInfo() {
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 overflow-hidden">
                     <motion.div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-pink-100/50 to-transparent" animate={{ x: ["-100%", "200%"] }} transition={{ duration: 1.5, repeat: Infinity, repeatDelay: 2 }} />
                   </div>
-                  <motion.div className="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-pink-500 transition-colors" whileHover={{ scale: 1.2, rotate: 360 }} transition={{ duration: 0.5 }}>
-                    <span className="text-pink-600 font-bold text-lg group-hover:text-white transition-colors">{index + 1}</span>
-                  </motion.div>
-                  <h4 className="font-semibold text-slate-900 mb-3 text-lg relative z-10">{item.title}</h4>
-                  <p className="text-slate-600 relative z-10">{item.description}</p>
+
+                  <div className="flex items-start gap-4">
+                    <img src={item.image} alt={item.title} onError={(e) => { e.currentTarget.src = "/images/placeholder.jpg"; }} className="w-24 h-20 object-cover rounded-md flex-shrink-0" />
+                    <div>
+                      <h4 className="font-semibold text-slate-900 mb-2 text-lg">{item.title}</h4>
+                      <p className="text-slate-600">{item.description}</p>
+                    </div>
+                  </div>
                 </motion.div>
               ))}
             </div>
@@ -792,13 +684,7 @@ export default function DevicesInfo() {
 
         {/* Floating Particles */}
         {[...Array(6)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-2 h-2 bg-white/20 rounded-full"
-            style={{ left: `${15 + i * 15}%`, top: `${20 + (i % 3) * 25}%` }}
-            animate={{ y: [0, -20, 0], opacity: [0.2, 0.6, 0.2] }}
-            transition={{ duration: 3 + i * 0.5, repeat: Infinity, delay: i * 0.3 }}
-          />
+          <motion.div key={i} className="absolute w-2 h-2 bg-white/20 rounded-full" style={{ left: `${15 + i * 15}%`, top: `${20 + (i % 3) * 25}%` }} animate={{ y: [0, -20, 0], opacity: [0.2, 0.6, 0.2] }} transition={{ duration: 3 + i * 0.5, repeat: Infinity, delay: i * 0.3 }} />
         ))}
 
         <div className="container mx-auto px-6 lg:px-12 relative">

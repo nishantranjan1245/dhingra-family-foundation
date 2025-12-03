@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 import { createPageUrl } from "@/utils";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { 
-  BookOpen, 
-  FileText, 
-  Heart, 
-  Lightbulb, 
-  Scale, 
-  Wrench, 
+import {
+  BookOpen,
+  FileText,
+  Heart,
+  Lightbulb,
+  Scale,
+  Wrench,
   Bell,
   Mail,
   ArrowRight,
@@ -20,27 +20,45 @@ export default function BlogInsights() {
   const latestArticles = [
     {
       title: "Understanding Different Wheelchair Types",
-      content: "Wheelchairs come in different designs to support various mobility needs. Manual, electric, folding, and sports wheelchairs all provide unique benefits like independence, comfort, and ease of movement."
+      content:
+        "Wheelchairs come in different designs to support various mobility needs. Manual, electric, folding, and sports wheelchairs all provide unique benefits like independence, comfort, and ease of movement.",
+      imageUrl: "/images/wheelchair-types.png", // wheelchair-related collection
+      alt: "Different wheelchairs"
     },
     {
       title: "Creating Accessible Public Places",
-      content: "Public areas become truly inclusive when ramps, railings, tactile paths, clear signage, and accessible washrooms are available. These features allow everyone to move freely and safely."
+      content:
+        "Public areas become truly inclusive when ramps, railings, tactile paths, clear signage, and accessible washrooms are available. These features allow everyone to move freely and safely.",
+      imageUrl: "/images/public-places.png",
+      alt: "Accessible public ramp and signage"
     },
     {
       title: "Home Accessibility Tips for Safer Living",
-      content: "Small changes at home—such as grab bars, anti-skid flooring, brighter lighting, and barrier-free entrances—help improve independence and reduce risks."
+      content:
+        "Small changes at home—such as grab bars, anti-skid flooring, brighter lighting, and barrier-free entrances—help improve independence and reduce risks.",
+      imageUrl: "/images/home-accessibility.png",
+      alt: "Home modifications for accessibility"
     },
     {
       title: "Inclusive Workplaces: What Every Employer Should Know",
-      content: "An inclusive workplace includes accessible desks, clear walkways, inclusive hiring, and assistive technologies that support employees with disabilities."
+      content:
+        "An inclusive workplace includes accessible desks, clear walkways, inclusive hiring, and assistive technologies that support employees with disabilities.",
+      imageUrl: "/images/inclusive-workplace.png",
+      alt: "Accessible workplace"
     },
     {
       title: "Digital Accessibility Basics",
-      content: "Digital accessibility ensures that websites, apps, and online platforms can be used by everyone through screen readers, high-contrast colors, alt text, captions, and keyboard navigation."
+      content:
+        "Digital accessibility ensures that websites, apps, and online platforms can be used by everyone through screen readers, high-contrast colors, alt text, captions, and keyboard navigation.",
+      imageUrl: "/images/digital-accessibility.png",
+      alt: "Digital accessibility concept"
     },
     {
       title: "How Assistive Devices Support Everyday Life",
-      content: "Assistive devices such as mobility sticks, walkers, braces, and daily support tools help individuals perform everyday tasks safely and independently."
+      content:
+        "Assistive devices such as mobility sticks, walkers, braces, and daily support tools help individuals perform everyday tasks safely and independently.",
+      imageUrl: "/images/device-support.png",
+      alt: "Assistive devices"
     }
   ];
 
@@ -91,13 +109,16 @@ export default function BlogInsights() {
     "Community workshops"
   ];
 
+  // fallback image in case of broken URL
+  const fallbackImage = "/images/default-accessibility.jpg";
+
   return (
     <div>
       {/* Hero Section */}
       <section className="relative min-h-[65vh] flex items-center overflow-hidden">
         {/* Newspaper/Magazine Style Background */}
         <div className="absolute inset-0">
-          <img 
+          <img
             src="/images/image-8.jpg"
             alt="Blog"
             className="w-full h-full object-cover"
@@ -106,7 +127,7 @@ export default function BlogInsights() {
         </div>
 
         {/* Floating Text Elements */}
-        <motion.div 
+        <motion.div
           className="absolute top-20 right-20 text-6xl font-bold text-white/5"
           animate={{ y: [0, -10, 0] }}
           transition={{ duration: 5, repeat: Infinity }}
@@ -121,7 +142,7 @@ export default function BlogInsights() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <motion.span 
+              <motion.span
                 className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/20 backdrop-blur-sm text-white rounded-full text-sm font-semibold mb-6 border border-white/30"
                 whileHover={{ scale: 1.05 }}
               >
@@ -149,7 +170,7 @@ export default function BlogInsights() {
                 ))}
               </div>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
@@ -186,12 +207,12 @@ export default function BlogInsights() {
       {/* Section 1: Latest Articles */}
       <section className="py-20 bg-white relative overflow-hidden">
         {/* Animated Background */}
-        <motion.div 
+        <motion.div
           className="absolute top-20 right-0 w-80 h-80 bg-gradient-to-br from-blue-100/50 to-purple-100/50 rounded-full blur-3xl"
           animate={{ scale: [1, 1.2, 1], x: [0, 30, 0] }}
           transition={{ duration: 12, repeat: Infinity }}
         />
-        
+
         <div className="container mx-auto px-6 lg:px-12 relative">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -200,7 +221,7 @@ export default function BlogInsights() {
             className="max-w-5xl mx-auto"
           >
             <div className="flex items-center gap-4 mb-10">
-              <motion.div 
+              <motion.div
                 className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center shadow-lg"
                 whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
               >
@@ -216,27 +237,36 @@ export default function BlogInsights() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
+                  transition={{ delay: index * 0.08 }}
                   whileHover={{ y: -5, scale: 1.02 }}
-                  className="bg-slate-50 rounded-2xl p-6 border border-slate-100 hover:shadow-xl hover:border-blue-200 transition-all duration-300 cursor-pointer group relative overflow-hidden"
+                  className="bg-slate-50 rounded-2xl p-4 border border-slate-100 hover:shadow-xl hover:border-blue-200 transition-all duration-300 cursor-pointer group relative overflow-hidden flex gap-4"
                 >
-                  {/* Shimmer Effect */}
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 overflow-hidden">
-                    <motion.div 
-                      className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent"
-                      animate={{ x: ["-100%", "200%"] }}
-                      transition={{ duration: 1.5, repeat: Infinity, repeatDelay: 2 }}
+                  {/* Image column */}
+                  <div className="w-36 min-w-[144px] h-28 rounded-xl overflow-hidden flex-shrink-0 bg-slate-200">
+                    <img
+                      src={article.imageUrl || fallbackImage}
+                      alt={article.alt || article.title}
+                      loading="lazy"
+                      onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = fallbackImage; }}
+                      className="w-full h-full object-cover"
                     />
                   </div>
-                  
-                  <motion.div 
-                    className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-blue-500 transition-colors relative z-10"
-                    whileHover={{ scale: 1.1 }}
-                  >
-                    <span className="text-blue-600 font-bold group-hover:text-white transition-colors">{index + 1}</span>
-                  </motion.div>
-                  <h3 className="text-lg font-semibold text-slate-900 mb-3 relative z-10">{article.title}</h3>
-                  <p className="text-slate-600 text-sm leading-relaxed relative z-10">{article.content}</p>
+
+                  {/* Content column */}
+                  <div className="flex-1 py-1 pr-2">
+                    <div className="flex items-start justify-between">
+                      <h3 className="text-lg font-semibold text-slate-900 mb-2">{article.title}</h3>
+                      <div className="text-xs text-slate-400">{index + 1}</div>
+                    </div>
+                    <p className="text-slate-600 text-sm leading-relaxed mb-3 line-clamp-3">{article.content}</p>
+
+                    <div className="flex items-center justify-between">
+                      <div className="text-xs text-slate-400">Accessibility</div>
+                      <Link to={createPageUrl("Blog") + `#article-${index}`}>
+                         
+                      </Link>
+                    </div>
+                  </div>
                 </motion.div>
               ))}
             </div>
@@ -247,12 +277,12 @@ export default function BlogInsights() {
       {/* Section 2: Stories of Inclusion */}
       <section className="py-20 bg-slate-50 relative overflow-hidden">
         {/* Floating Elements */}
-        <motion.div 
+        <motion.div
           className="absolute top-10 right-10 w-20 h-20 border-2 border-pink-200 rounded-full"
           animate={{ scale: [1, 1.2, 1], rotate: [0, 180, 360] }}
           transition={{ duration: 15, repeat: Infinity }}
         />
-        
+
         <div className="container mx-auto px-6 lg:px-12 relative">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -261,7 +291,7 @@ export default function BlogInsights() {
             className="max-w-4xl mx-auto"
           >
             <div className="flex items-center gap-4 mb-10">
-              <motion.div 
+              <motion.div
                 className="w-16 h-16 bg-pink-100 rounded-2xl flex items-center justify-center shadow-lg"
                 whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
               >
@@ -272,8 +302,8 @@ export default function BlogInsights() {
 
             <div className="grid md:grid-cols-3 gap-6">
               {storiesOfInclusion.map((story, index) => (
-                <motion.div 
-                  key={index} 
+                <motion.div
+                  key={index}
                   className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 hover:shadow-xl hover:border-pink-200 transition-all duration-300 group cursor-pointer"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -281,7 +311,7 @@ export default function BlogInsights() {
                   transition={{ delay: index * 0.1 }}
                   whileHover={{ y: -5, scale: 1.02 }}
                 >
-                  <motion.div 
+                  <motion.div
                     className="w-10 h-10 bg-pink-100 rounded-full flex items-center justify-center mb-3 group-hover:bg-pink-500 transition-colors"
                     whileHover={{ scale: 1.1 }}
                   >
@@ -293,7 +323,7 @@ export default function BlogInsights() {
               ))}
             </div>
 
-            <motion.p 
+            <motion.p
               className="text-center text-slate-500 italic mt-6"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -309,12 +339,12 @@ export default function BlogInsights() {
       {/* Section 3: Accessibility Knowledge */}
       <section className="py-20 bg-white relative overflow-hidden">
         {/* Animated Background */}
-        <motion.div 
+        <motion.div
           className="absolute bottom-20 right-0 w-72 h-72 bg-gradient-to-br from-amber-100/50 to-yellow-100/50 rounded-full blur-3xl"
           animate={{ scale: [1, 1.2, 1], x: [0, -30, 0] }}
           transition={{ duration: 12, repeat: Infinity }}
         />
-        
+
         <div className="container mx-auto px-6 lg:px-12 relative">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -323,7 +353,7 @@ export default function BlogInsights() {
             className="max-w-4xl mx-auto"
           >
             <div className="flex items-center gap-4 mb-10">
-              <motion.div 
+              <motion.div
                 className="w-16 h-16 bg-amber-100 rounded-2xl flex items-center justify-center shadow-lg"
                 whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
                 animate={{ rotate: [0, 5, 0, -5, 0] }}
@@ -339,8 +369,8 @@ export default function BlogInsights() {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {accessibilityKnowledge.map((topic, index) => (
-                <motion.div 
-                  key={index} 
+                <motion.div
+                  key={index}
                   className="flex items-center gap-3 bg-amber-50 p-4 rounded-xl border border-amber-100 hover:shadow-md hover:bg-amber-100/70 transition-all duration-300 cursor-pointer group"
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -348,7 +378,7 @@ export default function BlogInsights() {
                   transition={{ delay: index * 0.08 }}
                   whileHover={{ x: 5, scale: 1.02 }}
                 >
-                  <motion.div 
+                  <motion.div
                     className="w-3 h-3 bg-amber-500 rounded-full flex-shrink-0 group-hover:scale-150 transition-transform"
                     animate={{ scale: [1, 1.2, 1] }}
                     transition={{ duration: 2, repeat: Infinity, delay: index * 0.1 }}
@@ -364,12 +394,12 @@ export default function BlogInsights() {
       {/* Section 4: Policy Insights */}
       <section className="py-20 bg-slate-50 relative overflow-hidden">
         {/* Floating Elements */}
-        <motion.div 
+        <motion.div
           className="absolute top-20 left-10 w-24 h-24 border-2 border-purple-200 rounded-2xl"
           animate={{ rotate: [0, 45, 0], scale: [1, 1.1, 1] }}
           transition={{ duration: 10, repeat: Infinity }}
         />
-        
+
         <div className="container mx-auto px-6 lg:px-12 relative">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -378,7 +408,7 @@ export default function BlogInsights() {
             className="max-w-4xl mx-auto"
           >
             <div className="flex items-center gap-4 mb-6">
-              <motion.div 
+              <motion.div
                 className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center shadow-lg"
                 whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
               >
@@ -390,14 +420,14 @@ export default function BlogInsights() {
               </div>
             </div>
 
-            <motion.div 
+            <motion.div
               className="bg-purple-50 rounded-2xl p-8 border border-purple-100 mb-6 hover:shadow-lg transition-all duration-300"
               whileHover={{ y: -3 }}
             >
               <div className="grid md:grid-cols-2 gap-4">
                 {policyInsights.map((policy, index) => (
-                  <motion.div 
-                    key={index} 
+                  <motion.div
+                    key={index}
                     className="flex items-center gap-3 bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 group cursor-pointer"
                     initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -405,7 +435,7 @@ export default function BlogInsights() {
                     transition={{ delay: index * 0.1 }}
                     whileHover={{ x: 5 }}
                   >
-                    <motion.div 
+                    <motion.div
                       className="w-3 h-3 bg-purple-500 rounded-full flex-shrink-0 group-hover:scale-150 transition-transform"
                     />
                     <span className="text-slate-700">{policy}</span>
@@ -414,7 +444,7 @@ export default function BlogInsights() {
               </div>
             </motion.div>
 
-            <motion.p 
+            <motion.p
               className="text-slate-600 italic text-center"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -430,12 +460,12 @@ export default function BlogInsights() {
       {/* Section 5: Inclusion Tools & Guides */}
       <section className="py-20 bg-white relative overflow-hidden">
         {/* Animated Background */}
-        <motion.div 
+        <motion.div
           className="absolute top-20 right-0 w-72 h-72 bg-gradient-to-br from-teal-100/50 to-blue-100/50 rounded-full blur-3xl"
           animate={{ scale: [1, 1.2, 1], x: [0, 30, 0] }}
           transition={{ duration: 12, repeat: Infinity }}
         />
-        
+
         <div className="container mx-auto px-6 lg:px-12 relative">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -444,7 +474,7 @@ export default function BlogInsights() {
             className="max-w-4xl mx-auto"
           >
             <div className="flex items-center gap-4 mb-10">
-              <motion.div 
+              <motion.div
                 className="w-16 h-16 bg-teal-100 rounded-2xl flex items-center justify-center shadow-lg"
                 whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
               >
@@ -458,8 +488,8 @@ export default function BlogInsights() {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {inclusionTools.map((tool, index) => (
-                <motion.div 
-                  key={index} 
+                <motion.div
+                  key={index}
                   className="flex items-center gap-3 bg-teal-50 p-4 rounded-xl border border-teal-100 hover:shadow-md hover:bg-teal-100/70 transition-all duration-300 cursor-pointer group"
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -467,7 +497,7 @@ export default function BlogInsights() {
                   transition={{ delay: index * 0.08 }}
                   whileHover={{ x: 5, scale: 1.02 }}
                 >
-                  <motion.div 
+                  <motion.div
                     className="w-3 h-3 bg-teal-500 rounded-full flex-shrink-0 group-hover:scale-150 transition-transform"
                   />
                   <span className="text-slate-700">{tool}</span>
@@ -481,12 +511,12 @@ export default function BlogInsights() {
       {/* Section 6: Foundation Updates */}
       <section className="py-20 bg-slate-50 relative overflow-hidden">
         {/* Floating Elements */}
-        <motion.div 
+        <motion.div
           className="absolute bottom-20 right-20 w-16 h-16 bg-green-200 rounded-full opacity-50"
           animate={{ scale: [1, 1.3, 1], y: [0, -15, 0] }}
           transition={{ duration: 5, repeat: Infinity }}
         />
-        
+
         <div className="container mx-auto px-6 lg:px-12 relative">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -495,7 +525,7 @@ export default function BlogInsights() {
             className="max-w-4xl mx-auto"
           >
             <div className="flex items-center gap-4 mb-6">
-              <motion.div 
+              <motion.div
                 className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center shadow-lg"
                 whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
                 animate={{ rotate: [0, 10, 0, -10, 0] }}
@@ -509,14 +539,14 @@ export default function BlogInsights() {
               </div>
             </div>
 
-            <motion.div 
+            <motion.div
               className="bg-green-50 rounded-2xl p-8 border border-green-100 mb-6 hover:shadow-lg transition-all duration-300"
               whileHover={{ y: -3 }}
             >
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {foundationUpdates.map((update, index) => (
-                  <motion.div 
-                    key={index} 
+                  <motion.div
+                    key={index}
                     className="flex items-center gap-3 bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 group cursor-pointer"
                     initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -524,7 +554,7 @@ export default function BlogInsights() {
                     transition={{ delay: index * 0.1 }}
                     whileHover={{ x: 5 }}
                   >
-                    <motion.div 
+                    <motion.div
                       className="w-3 h-3 bg-green-500 rounded-full flex-shrink-0 group-hover:scale-150 transition-transform"
                       animate={{ scale: [1, 1.2, 1] }}
                       transition={{ duration: 2, repeat: Infinity, delay: index * 0.2 }}
@@ -535,7 +565,7 @@ export default function BlogInsights() {
               </div>
             </motion.div>
 
-            <motion.p 
+            <motion.p
               className="text-slate-600 italic text-center"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -551,22 +581,22 @@ export default function BlogInsights() {
       {/* Section 7: Subscribe CTA */}
       <section className="py-20 bg-gradient-to-br from-red-700 to-orange-700 relative overflow-hidden">
         {/* Animated Shapes */}
-        <motion.div 
+        <motion.div
           className="absolute top-10 left-10 w-32 h-32 border-2 border-white/10 rounded-full"
           animate={{ rotate: 360, scale: [1, 1.1, 1] }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
         />
-        <motion.div 
+        <motion.div
           className="absolute bottom-10 right-10 w-24 h-24 border-2 border-white/15 rounded-2xl"
           animate={{ rotate: -360 }}
           transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
         />
-        <motion.div 
+        <motion.div
           className="absolute top-1/2 left-1/4 w-40 h-40 bg-white/5 rounded-full blur-3xl"
           animate={{ scale: [1, 1.5, 1], opacity: [0.1, 0.2, 0.1] }}
           transition={{ duration: 8, repeat: Infinity }}
         />
-        
+
         <div className="container mx-auto px-6 lg:px-12 relative">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -574,7 +604,7 @@ export default function BlogInsights() {
             viewport={{ once: true }}
             className="max-w-3xl mx-auto text-center text-white"
           >
-            <motion.div 
+            <motion.div
               className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-6 border border-white/30"
               whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
               animate={{ y: [0, -5, 0] }}
