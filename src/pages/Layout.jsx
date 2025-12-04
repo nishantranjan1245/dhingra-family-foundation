@@ -386,7 +386,7 @@ export default function Layout({ children, currentPageName }) {
           <div className="container mx-auto px-4 lg:px-12 py-6">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <p className="text-slate-400 text-sm">
-                © 2025 Dhingra Family Foundation — All Rights Reserved.
+                © 2025 Dhingra Family Foundation India — All Rights Reserved.
               </p>
               <div className="flex flex-wrap justify-center gap-4 md:gap-6">
                 {policies.map((policy, index) => (
