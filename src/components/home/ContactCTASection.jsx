@@ -82,7 +82,7 @@ export default function ContactCTASection() {
             className="space-y-5"
           >
             {[
-              { icon: Mail, label: "Email Us", value: "info@dhingrafamily.org", gradient: "from-red-500 to-red-600" },
+              { icon: Mail, label: "Email Us", value: "info@dhingrafamilyfoundationindia.org", gradient: "from-red-500 to-red-600" },
               { icon: Phone, label: "Call Us", value: "+91 74908 74578", gradient: "from-orange-500 to-orange-600" },
               { icon: MapPin, label: "Visit Us", value: "Sehore, Madhya Pradesh, India", gradient: "from-yellow-500 to-yellow-600" }
             ].map((item, index) => (

@@ -103,7 +103,7 @@ export default function Contact() {
               <div className="flex flex-wrap gap-4">
                 {[
                   { icon: Phone, text: "+91 74908 74578" },
-                  { icon: Mail, text: "info@dhingrafamily.org" }
+                  { icon: Mail, text: "info@dhingrafamilyfoundationindia.org" }
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full">
                     <item.icon className="w-4 h-4 text-yellow-300" />
@@ -172,8 +172,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-slate-900 mb-2">Email</h3>
-                    <a href="mailto:info@dhingrafamily.org" className="text-teal-600 hover:underline">
-                      info@dhingrafamily.org
+                    <a href="mailto:info@dhingrafamilyfoundationindia.org" className="text-teal-600 hover:underline">
+                      info@dhingrafamilyfoundationindia.org
                     </a>
                   </div>
                 </div>

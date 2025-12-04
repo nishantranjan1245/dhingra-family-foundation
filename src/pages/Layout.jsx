@@ -122,7 +122,7 @@ export default function Layout({ children, currentPageName }) {
               </motion.div>
               <div className="flex flex-col">
                 <span className="font-bold bg-gradient-to-r from-red-600 via-orange-500 to-red-600 bg-clip-text text-transparent text-base sm:text-lg bg-[length:200%_auto] animate-gradient">
-                  Dhingra Foundation
+                  Dhingra Family Foundation India
                 </span>
               </div>
             </Link>
@@ -298,7 +298,7 @@ export default function Layout({ children, currentPageName }) {
                 <img src={FOOTER_LOGO_URL} alt="Dhingra Family Foundation" className="w-16 h-16 object-contain" />
                 <div className="flex flex-col">
                 <span className="font-bold bg-gradient-to-r from-red-600 via-orange-500 to-red-600 bg-clip-text text-transparent text-base sm:text-lg bg-[length:200%_auto] animate-gradient">
-                  Dhingra Foundation
+                  Dhingra Family Foundation India
                 </span>
               </div>
               </Link>
@@ -366,8 +366,8 @@ export default function Layout({ children, currentPageName }) {
                 </div>
                 <div>
                   <p className="text-red-400 font-medium text-sm mb-1">Email</p>
-                  <a href="mailto:info@dhingrafamily.org" className="text-sm hover:text-red-400 transition-colors">
-                    info@dhingrafamily.org
+                  <a href="mailto:info@dhingrafamilyfoundationindia.org" className="text-sm hover:text-red-400 transition-colors">
+                    info@dhingrafamilyfoundationindia.org
                   </a>
                 </div>
                 <div>

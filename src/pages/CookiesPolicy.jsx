@@ -89,7 +89,7 @@ export default function CookiesPolicy() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              This Cookies Policy explains how Dhingra Family Foundation India ("we", "our", "us") uses cookies and similar technologies on www.dhingrafamily.org ("website"). By using our website, you agree to the use of cookies as described in this policy.
+              This Cookies Policy explains how Dhingra Family Foundation India ("we", "our", "us") uses cookies and similar technologies on www.dhingrafamilyfoundationindia.org ("website"). By using our website, you agree to the use of cookies as described in this policy.
             </motion.p>
 
             {/* Section 1 */}
@@ -292,7 +292,7 @@ export default function CookiesPolicy() {
                   Madhya Pradesh – 466001, India
                 </p>
                 <p className="text-slate-600 mt-2">
-                  <a href="mailto:info@dhingrafamily.org" className="text-red-600 hover:underline">📧 info@dhingrafamily.org</a>
+                  <a href="mailto:info@dhingrafamilyfoundationindia.org" className="text-red-600 hover:underline">📧 info@dhingrafamilyfoundationindia.org</a>
                 </p>
               </div>
             </div>
