@@ -60,7 +60,7 @@ export default function PrivacyPolicy() {
         <div className="container mx-auto px-6 lg:px-12">
           <div className="max-w-4xl mx-auto">
             <p className="text-slate-600 mb-8 leading-relaxed">
-              Dhingra Family Foundation India ("we", "our", "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, store, and safeguard your information when you visit www.dhingrafamily.org or interact with our activities, forms, or communication channels.
+              Dhingra Family Foundation India ("we", "our", "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, store, and safeguard your information when you visit www.dhingrafamilyfoundationindia.org or interact with our activities, forms, or communication channels.
             </p>
             <p className="text-slate-600 mb-12">
               By using our website, you agree to the practices described in this policy.
@@ -215,7 +215,7 @@ export default function PrivacyPolicy() {
                 <li>Withdraw consent for communication</li>
               </ul>
               <p className="text-slate-600">
-                To make such requests, contact us at: <a href="mailto:info@dhingrafamily.org" className="text-red-600 hover:underline">info@dhingrafamily.org</a>
+                To make such requests, contact us at: <a href="mailto:info@dhingrafamilyfoundationindia.org" className="text-red-600 hover:underline">info@dhingrafamilyfoundationindia.org</a>
               </p>
             </div>
 
@@ -262,7 +262,7 @@ export default function PrivacyPolicy() {
                   Madhya Pradesh – 466001, India
                 </p>
                 <p className="text-slate-600 mt-2">
-                  <a href="mailto:info@dhingrafamily.org" className="text-red-600 hover:underline">📧 info@dhingrafamily.org</a>
+                  <a href="mailto:info@dhingrafamilyfoundationindia.org" className="text-red-600 hover:underline">📧 info@dhingrafamilyfoundationindia.org</a>
                 </p>
               </div>
             </div>

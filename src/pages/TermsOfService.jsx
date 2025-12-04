@@ -67,7 +67,7 @@ export default function TermsOfService() {
         <div className="container mx-auto px-6 lg:px-12">
           <div className="max-w-4xl mx-auto">
             <p className="text-slate-600 mb-4 leading-relaxed">
-              Welcome to Dhingra Family Foundation India ("we", "our", "us"). By accessing or using www.dhingrafamily.org ("website"), you agree to follow these Terms of Use. If you do not agree, please discontinue using the website.
+              Welcome to Dhingra Family Foundation India ("we", "our", "us"). By accessing or using www.dhingrafamilyfoundationindia.org ("website"), you agree to follow these Terms of Use. If you do not agree, please discontinue using the website.
             </p>
             <p className="text-slate-600 mb-12">
               These terms ensure safe, respectful, and informational use of our platform.
@@ -265,7 +265,7 @@ export default function TermsOfService() {
                   Madhya Pradesh – 466001, India
                 </p>
                 <p className="text-slate-600 mt-2">
-                  <a href="mailto:info@dhingrafamily.org" className="text-red-600 hover:underline">📧 info@dhingrafamily.org</a>
+                  <a href="mailto:info@dhingrafamilyfoundationindia.org" className="text-red-600 hover:underline">📧 info@dhingrafamilyfoundationindia.org</a>
                 </p>
               </div>
             </div>

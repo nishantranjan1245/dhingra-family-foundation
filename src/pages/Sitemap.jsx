@@ -196,7 +196,7 @@ export default function Sitemap() {
               </div>
             </div>
             <p className="text-white/85 text-lg max-w-2xl">
-              Navigate easily through all pages on DhingraFamily.org and find the information you need.
+              Navigate easily through all pages on dhingrafamilyfoundationindia.org and find the information you need.
             </p>
           </motion.div>
         </div>

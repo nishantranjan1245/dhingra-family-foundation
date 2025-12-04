@@ -67,7 +67,7 @@ export default function Disclaimer() {
         <div className="container mx-auto px-6 lg:px-12">
           <div className="max-w-4xl mx-auto">
             <p className="text-slate-600 mb-4 leading-relaxed">
-              The information provided on www.dhingrafamily.org ("website") by Dhingra Family Foundation India ("we", "our", "us") is intended solely for general awareness and informational purposes.
+              The information provided on www.dhingrafamilyfoundationindia.org ("website") by Dhingra Family Foundation India ("we", "our", "us") is intended solely for general awareness and informational purposes.
             </p>
             <p className="text-slate-600 mb-12">
               By using this website, you agree to this Disclaimer. If you do not agree, please discontinue using the site.
@@ -221,7 +221,7 @@ export default function Disclaimer() {
                   Madhya Pradesh – 466001, India
                 </p>
                 <p className="text-slate-600 mt-2">
-                  <a href="mailto:info@dhingrafamily.org" className="text-red-600 hover:underline">📧 info@dhingrafamily.org</a>
+                  <a href="mailto:info@dhingrafamilyfoundationindia.org" className="text-red-600 hover:underline">📧 info@dhingrafamilyfoundationindia.org</a>
                 </p>
               </div>
             </div>

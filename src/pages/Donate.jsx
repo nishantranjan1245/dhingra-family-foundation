@@ -462,12 +462,12 @@ export default function Donate() {
             
             <div className="flex flex-col sm:flex-row justify-center gap-6 mb-8">
               <motion.a 
-                href="mailto:info@dhingrafamily.org" 
+                href="mailto:info@dhingrafamilyfoundationindia.org" 
                 className="flex items-center justify-center gap-2 text-white hover:text-teal-200 transition-colors bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20"
                 whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.2)" }}
               >
                 <Mail className="w-5 h-5" />
-                info@dhingrafamily.org
+                info@dhingrafamilyfoundationindia.org
               </motion.a>
               <motion.a 
                 href="tel:+917490874578" 

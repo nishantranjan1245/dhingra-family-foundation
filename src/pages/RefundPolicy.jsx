@@ -67,7 +67,7 @@ export default function RefundPolicy() {
               Dhingra Family Foundation India ("we", "our", "us") is committed to maintaining transparency and trust with our donors and supporters. This policy explains how donations are handled and under what circumstances refunds may be considered.
             </p>
             <p className="text-slate-600 mb-12">
-              By contributing through www.dhingrafamily.org, you agree to the terms outlined below.
+              By contributing through www.dhingrafamilyfoundationindia.org, you agree to the terms outlined below.
             </p>
 
             {/* Section 1 */}
@@ -146,7 +146,7 @@ export default function RefundPolicy() {
               <p className="text-slate-600 mb-4">
                 To request a refund, please email us with the following details:
               </p>
-              <p className="text-red-600 font-medium mb-4">📧 info@dhingrafamily.org</p>
+              <p className="text-red-600 font-medium mb-4">📧 info@dhingrafamilyfoundationindia.org</p>
               <p className="text-slate-600 mb-2">Include:</p>
               <ul className="list-disc list-inside text-slate-600 mb-4 space-y-1 ml-4">
                 <li>Full name</li>
@@ -257,7 +257,7 @@ export default function RefundPolicy() {
                   Madhya Pradesh – 466001, India
                 </p>
                 <p className="text-slate-600 mt-2">
-                  <a href="mailto:info@dhingrafamily.org" className="text-red-600 hover:underline">📧 info@dhingrafamily.org</a>
+                  <a href="mailto:info@dhingrafamilyfoundationindia.org" className="text-red-600 hover:underline">📧 info@dhingrafamilyfoundationindia.org</a>
                 </p>
               </div>
             </div>
