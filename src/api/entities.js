@@ -1,7 +1,7 @@
-import { base44 } from './base44Client';
+import { dhingra } from './dhingraClient';
 
 
 
 
 // auth sdk:
-export const User = base44.auth;
+export const User = dhingra.auth;
